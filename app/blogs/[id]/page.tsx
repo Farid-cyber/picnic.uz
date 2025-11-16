@@ -40,14 +40,11 @@ const Blog = () => {
         <div className="left-side-blog">
           {/* <Image quality={100} height={100} width={100} src={fullImage} alt="" />
            */}
-           <img src={blogs?.image} alt="" />
+          <img src={blogs?.image} alt="" />
         </div>
         <div className="right-side-blog">
           <div className="first-right-side-blog">
-            <h1>
-              {" "}
-              Sarlavha: <span>{blogs?.title}</span>
-            </h1>
+            <h1>{blogs?.title}</h1>
             <p>
               Tavsif: <span>{blogs?.description}</span>
             </p>
