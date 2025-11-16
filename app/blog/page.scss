@@ -1,0 +1,118 @@
+@mixin media ($size) {
+    @media (max-width:$size) {
+        @content;
+    }
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.blog {
+    max-width: 1240px;
+    width: 100%;
+    // border: 1px solid;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+
+    .top-blog {
+        max-width: 892px;
+        margin: 0 auto;
+        // border: 1px solid;
+        display: flex;
+        margin-top: 90px;
+        flex-direction: column;
+        align-items: center;
+
+        @include media(450px) {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 1);
+            line-height: 100%;
+            margin: 0 auto;
+            text-align: center;
+
+            @include media(450px) {
+                font-size: 25px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgba(98, 98, 98, 1);
+            line-height: 100%;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 16px;
+
+            @include media(450px) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .posts-blog {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 90px;
+        padding: 15px;
+        // align-items: center;
+        justify-content: center;
+
+        @include media(450px) {
+            margin-top: 50px;
+        }
+
+        .post {
+            width: 350px;
+            height: 340px;
+            border-radius: 15px;
+            // border: 1px solid;
+
+            img {
+                width: 100%;
+                border-radius: 15px;
+                height: 232px;
+            }
+
+            .post-child {
+                height: 33%;
+                // border: 1px solid;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    line-height: 100%;
+                    color: rgba(0, 0, 0, 1);
+                    margin-top: 10px;
+                }
+
+                button {
+                    width: 180px;
+                    height: 35px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 20px;
+                    border: 1px solid rgba(0, 0, 0, 1);
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 1);
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

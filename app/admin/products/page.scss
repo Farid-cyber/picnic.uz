@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+}
+
+.buttoncha {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: rgb(9, 207, 9);
+    color: white;
+
+}
+
+.life {
+    // width: 100%;
+    // height: 100vh;
+    // // border: 1px solid black;
+    // padding: 20px 50px 20px 50px;
+
+    .product {
+        width: 300px;
+        height: 408px;
+
+
+
+        .image-product {
+            width: 300px;
+            height: 300px;
+            background-color: rgb(231, 244, 211);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 1);
+            line-height: 100%;
+            margin-top: 17px;
+        }
+
+        .star-wrapper {
+            margin-top: 10px;
+
+            div {
+                color: rgba(255, 198, 51, 1);
+            }
+
+            p {
+                font-size: 14px;
+                color: rgba(0, 0, 0, 1);
+                font-weight: 400;
+                line-height: 100%;
+            }
+        }
+
+        .bottom {
+            margin-top: 8px;
+
+            div {
+                display: flex;
+                align-items: center;
+                // border: 1px solid;
+                height: 32px;
+
+                p {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: rgba(0, 0, 0, 1);
+                    line-height: 100%;
+                }
+
+                span {
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: rgba(0, 0, 0, 0.4);
+                    line-height: 100%;
+                }
+
+                .percent-button {
+                    width: 58px;
+                    height: 28px;
+                    border: none;
+                    background-color: rgba(255, 51, 51, 0.1);
+                    border-radius: 60px;
+                    padding: 6px 14px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: rgba(255, 51, 51, 1);
+                    line-height: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
+    }
+}
+
+
+.rodal {
+    border-radius: 20px;
+
+    div {
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 1);
+            line-height: 100%;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .rodal-inside {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+
+            input {
+                width: 100%;
+                height: 40px;
+                border: 1px solid rgba(148, 148, 148, 1);
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            textarea {
+                height: 127px;
+                width: 100%;
+                padding: 10px;
+                border: 1px solid rgba(148, 148, 148, 1);
+                border-radius: 10px;
+            }
+        }
+
+        .submit-button {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(36, 93, 48, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-top: 50px;
+            color: white;
+        }
+
+        .comment-button {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(65, 65, 247);
+            display: flex;
+            font-size: 14px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+        }
+
+
+    }
+}
+
+
+.button-del {
+    width: 40px;
+    height: 20px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.adding-image {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonsss {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 7px;
+    background-color: red;
+    color: white;
+}
+
+.buttonsss2 {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    font-size: 7px;
+}

@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.products {
+  width: 100%;
+  height: 100vh;
+  padding: 20px 50px 20px 50px;
+}/*# sourceMappingURL=page.css.map */
