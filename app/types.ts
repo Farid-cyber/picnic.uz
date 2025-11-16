@@ -11,7 +11,7 @@ export type Product = {
   discount: string;
   rating?: number;
   category: string;
-  images?: [];
+  images?:string [];
 };
 
 export type PreOrder = {
@@ -22,7 +22,7 @@ export type PreOrder = {
   discount: string;
   rating?: number;
   category: string;
-  images?: [];
+  images?: string[];
   quantity: number;
   // status:boolean
 };
