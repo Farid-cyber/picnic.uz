@@ -96,7 +96,7 @@ const SignUp = () => {
       <div>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
-      <button onClick={() => router.push("/")} className="life ">
+      <button onClick={() => router.push("/")} className="life111 ">
         Return Home
       </button>
       {login !== true ? (
@@ -121,7 +121,7 @@ const SignUp = () => {
             />
             <button
               onClick={() => setLogin(true)}
-              className="life mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
+              className="life111 mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               Dont have an account? Sign Up
             </button>
