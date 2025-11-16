@@ -4,12 +4,13 @@
 
 .sidebar {
   width: 60%;
-  height: 100vh;
+  height: 100%;
   border: 1px solid aliceblue;
   position: absolute;
   z-index: 2;
-  transition: all ease-in-out 1000ms;
+  transition: all ease-in-out 500ms;
   border-right: 2px solid rgba(36, 93, 48, 0.2);
+  border-bottom: 2px solid rgba(36, 93, 48, 0.2);
   padding: 30px;
   background-color: white;
 }
@@ -17,10 +18,10 @@
 .sidebar2 {
   background-color: white;
   width: 60%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   margin-left: -100%;
-  transition: all ease-in-out 1000ms;
+  transition: all ease-in-out 500ms;
   border-right: 2px solid rgba(36, 93, 48, 0.2);
 }
 
@@ -34,6 +35,6 @@ button {
   font-weight: 700;
 }
 
-.button2 {
+button.button2 {
   background-color: rgb(240, 240, 240);
 }/*# sourceMappingURL=sidebar.css.map */

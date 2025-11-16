@@ -1,0 +1,112 @@
+.categories {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+@media (max-width: 800px) {
+  .categories {
+    margin-top: 120px;
+  }
+}
+@media (max-width: 500px) {
+  .categories {
+    margin-top: 90px;
+    padding: 10px;
+  }
+}
+.categories h1 {
+  font-size: 50px;
+  line-height: 100%;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .categories h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .categories h1 {
+    font-size: 30px;
+  }
+}
+.categories .buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+@media (max-width: 800px) {
+  .categories .buttons {
+    margin-top: 50px;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 500px) {
+  .categories .buttons {
+    margin-top: 25px;
+    padding: 0 10px;
+  }
+}
+.categories .buttons .button {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+  color: rgb(0, 0, 0);
+  width: 180px;
+  height: 50px;
+  padding: 10px 20px;
+  width: 180px;
+  flex-shrink: 0;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .categories .buttons .button {
+    width: 140px;
+  }
+}
+@media (max-width: 500px) {
+  .categories .buttons .button {
+    width: 100px;
+    font-size: 12px;
+  }
+}
+.categories .buttons .button2 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 100%;
+  border: 2px solid green;
+  border-radius: 30px;
+  width: 180px;
+  background-color: white;
+  height: 50px;
+  padding: 10px 20px;
+  width: 180px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  .categories .buttons .button2 {
+    width: 140px;
+    border-radius: 30px;
+  }
+}
+@media (max-width: 500px) {
+  .categories .buttons .button2 {
+    width: 100px;
+    font-size: 12px;
+    border-radius: 30px;
+  }
+}
+.categories .buttons::-webkit-scrollbar {
+  width: 0;
+  /* for vertical scrollbar */
+  height: 0;
+  /* for horizontal scrollbar */
+}/*# sourceMappingURL=categories.css.map */

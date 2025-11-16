@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.blog-wrapper {
+  padding-top: 40px;
+  padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.blog-wrapper .bloggg {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: 0px 15px 30px 15px rgb(206, 205, 205);
+  margin-top: 20px;
+}
+.blog-wrapper .bloggg .left-side-blog {
+  width: 100%;
+}
+.blog-wrapper .bloggg .left-side-blog img {
+  width: 100%;
+}
+.blog-wrapper .bloggg .right-side-blog {
+  height: 100%;
+  padding-top: 20px;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.blog-wrapper .bloggg .right-side-blog .first-right-side-blog {
+  color: rgb(0, 0, 0);
+}
+.blog-wrapper .bloggg .right-side-blog .first-right-side-blog h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.blog-wrapper .bloggg .right-side-blog .first-right-side-blog h1 span {
+  font-weight: 400;
+}
+.blog-wrapper .bloggg .right-side-blog .first-right-side-blog p {
+  font-size: 16px;
+  font-weight: 600;
+}
+.blog-wrapper .bloggg .right-side-blog .first-right-side-blog p span {
+  font-weight: 400;
+  color: rgb(114, 114, 114);
+}
+.blog-wrapper .bloggg .right-side-blog .second-right-side-blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 0;
+  height: 90%;
+}
+.blog-wrapper .bloggg .right-side-blog .second-right-side-blog .second-second-right-side-blog {
+  display: flex;
+  flex-direction: column;
+}
+.blog-wrapper .bloggg .right-side-blog .second-right-side-blog .second-second-right-side-blog h3 {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+}
+.blog-wrapper .bloggg .right-side-blog .second-right-side-blog .second-second-right-side-blog h3 span {
+  font-weight: 400;
+}
+.blog-wrapper .bloggg .right-side-blog .second-right-side-blog .second-second-right-side-blog button {
+  width: 180px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 2px solid rgb(0, 0, 0);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}/*# sourceMappingURL=page.css.map */

@@ -2,8 +2,172 @@
   box-sizing: border-box;
 }
 
-.products {
+.buttoncha {
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: rgb(9, 207, 9);
+  color: white;
+}
+
+.life .product {
+  width: 300px;
+  height: 408px;
+}
+.life .product .image-product {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(231, 244, 211);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.life .product h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  line-height: 100%;
+  margin-top: 17px;
+}
+.life .product .star-wrapper {
+  margin-top: 10px;
+}
+.life .product .star-wrapper div {
+  color: rgb(255, 198, 51);
+}
+.life .product .star-wrapper p {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  line-height: 100%;
+}
+.life .product .bottom {
+  margin-top: 8px;
+}
+.life .product .bottom div {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+.life .product .bottom div p {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  line-height: 100%;
+}
+.life .product .bottom div span {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 100%;
+}
+.life .product .bottom div .percent-button {
+  width: 58px;
+  height: 28px;
+  border: none;
+  background-color: rgba(255, 51, 51, 0.1);
+  border-radius: 60px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(255, 51, 51);
+  line-height: 100%;
+  margin-bottom: 10px;
+}
+
+.rodal {
+  border-radius: 20px;
+}
+.rodal div p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  line-height: 100%;
+  text-align: center;
+  margin-top: 35px;
+}
+.rodal div .rodal-inside {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+.rodal div .rodal-inside input {
   width: 100%;
-  height: 100vh;
-  padding: 20px 50px 20px 50px;
+  height: 40px;
+  border: 1px solid rgb(148, 148, 148);
+  border-radius: 10px;
+  padding: 10px;
+}
+.rodal div .rodal-inside textarea {
+  height: 127px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(148, 148, 148);
+  border-radius: 10px;
+}
+.rodal div .submit-button {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(36, 93, 48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 50px;
+  color: white;
+}
+.rodal div .comment-button {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(65, 65, 247);
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 50px;
+  color: white;
+  padding: 20px;
+}
+
+.button-del {
+  width: 40px;
+  height: 20px;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adding-image {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsss {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 7px;
+  background-color: red;
+  color: white;
+}
+
+.buttonsss2 {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  font-size: 7px;
 }/*# sourceMappingURL=page.css.map */
