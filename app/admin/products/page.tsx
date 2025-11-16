@@ -23,7 +23,7 @@ type Product = {
   discount: string;
   rating?: number;
   category: string;
-  images?: [];
+  images?: string[];
 };
 
 type Category = {
@@ -182,7 +182,7 @@ const Categories = () => {
           <div key={c.id} className="product">
             <div className="image-product">
               <img
-                src={`${c.images ? c.images[0] : ""}`}
+                src={`${c.images![0]}`}
                 width={200}
                 height={200}
                 alt=""
