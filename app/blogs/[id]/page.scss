@@ -1,7 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@mixin media ($size) {
+    @media (max-width:$size) {
+        @content;
+    }
+}
 
 .blog-wrapper {
     max-width: 1240px;
     width: 100%;
+    // border: 1px solid;
+    // height: 413px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+
+    @include media(750px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .left-child-blog-wrapper {
+        width: 50%;
+
+        @include media(750px) {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+
+            @include media(750px) {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .right-child-blog-wrapper {
+        width: 50%;
+
+        @include media(750px) {
+            width: 100%;
+        }
+
+        // border: 1px solid;
+
+        .life {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @include media(750px) {
+                width: 100%;
+                // justify-content:;
+                align-items: start;
+            }
+        }
+    }
 }
