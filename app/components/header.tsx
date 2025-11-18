@@ -66,7 +66,9 @@ export default function Header({ setSide, sidebar }: InitialProps) {
 
   return (
     <div className="header">
-      <Image src={"/logo.svg"} width={60} height={60} alt="nimadir" />
+      <Link href={"/"}>
+        <Image src={"/logo.svg"} width={60} height={60} alt="nimadir" />
+      </Link>
       <div className="middle-child-header cursor-pointer">
         <div>
           <Link onClick={() => setSelected("/")} href={"/"}>

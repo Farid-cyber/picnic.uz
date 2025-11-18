@@ -59,7 +59,7 @@ const Blog = () => {
           </div>
         </div>
       </div> */}
-      <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
+      <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4">
         <img
           className="w-full"
           src={`${blogs?.image}`}

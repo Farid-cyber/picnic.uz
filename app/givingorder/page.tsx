@@ -208,38 +208,40 @@ const Page = () => {
                 </div>
               ))}
             </div>
-            <div className="right-side-second-givingorder">
-              <h2>Buyurtma xulosasi</h2>
-              <div className="second-child-right-side-second-givingorder">
-                <h3>Oraliq jami</h3>
-                <p>${calculateAll()}</p>
-              </div>
-              <div
-                className={`${
-                  user === false
-                    ? "line-through third-child-right-side-second-givingorder"
-                    : "third-child-right-side-second-givingorder"
-                }`}
-              >
-                <h3>Chegirma (-20%)</h3>
-                <h5>-${calculateDiscount()}</h5>
-              </div>
-              <hr />
-              <div className="fifth-child-right-side-second-givingorder">
-                <h3>Oraliq jami</h3>
-                <p>
-                  $
-                  {user === false
-                    ? calculateAll()
-                    : calculateAll() - calculateDiscount()}
-                </p>
-              </div>
-              <div
-                onClick={() => setOpen(true)}
-                className="six-child-right-side-second-givingorder cursor-pointer"
-              >
-                Buyurtma berish{""}
-                <FaArrowRightLong size={20} className="mt-1 ml-3" />
+            <div className="w-[350px]">
+              <div className="right-side-second-givingorder">
+                <h2>Buyurtma xulosasi</h2>
+                <div className="second-child-right-side-second-givingorder">
+                  <h3>Oraliq jami</h3>
+                  <p>${calculateAll()}</p>
+                </div>
+                <div
+                  className={`${
+                    user === false
+                      ? "line-through third-child-right-side-second-givingorder"
+                      : "third-child-right-side-second-givingorder"
+                  }`}
+                >
+                  <h3>Chegirma (-20%)</h3>
+                  <h5>-${calculateDiscount()}</h5>
+                </div>
+                <hr />
+                <div className="fifth-child-right-side-second-givingorder">
+                  <h3>Oraliq jami</h3>
+                  <p>
+                    $
+                    {user === false
+                      ? calculateAll()
+                      : calculateAll() - calculateDiscount()}
+                  </p>
+                </div>
+                <div
+                  onClick={() => setOpen(true)}
+                  className="six-child-right-side-second-givingorder cursor-pointer"
+                >
+                  Buyurtma berish{""}
+                  <FaArrowRightLong size={20} className="mt-1 ml-3" />
+                </div>
               </div>
             </div>
           </div>

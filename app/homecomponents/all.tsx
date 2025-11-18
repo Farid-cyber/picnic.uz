@@ -71,7 +71,7 @@ const All = () => {
   return (
     <div className="w-full pb-[40px]">
       <Categories category={category} setCategory={setCategoryId} />
-      <div className="products-wrapper mt-3 flex flex-wrap justify-center gap-[30px] mx-auto products-wrapper">
+      <div className="products-wrapper mt-3 flex flex-wrap justify-center gap-[10px] mx-auto products-wrapper">
         {products.map((c) => (
           <Product setPreorder={setOrders} key={c.id} product={c} />
         ))}
