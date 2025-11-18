@@ -90,7 +90,7 @@ const Posts = () => {
 
   const handleEdit = (c: Post) => {
     console.log(c);
-    
+
     setPostForm(c);
     setOpen(true);
     setEditingid(c.id);
@@ -110,24 +110,31 @@ const Posts = () => {
               {/* <Link href={`/blogs/${c.id}`}> */}
               <img src={`${c.image}`} alt="" />
               {/* </Link> */}
-              <h2>{c.title}</h2>
-              <div className="post-child">
-                <p className="mt-2">{c.description}</p>
-                <div>
-                  <h4>{c.author}</h4>
-                  <button>{c.createdAt}</button>
+              <div className="father">
+                <div className="post-child1">
+                  <h2>{c.title}</h2>
+                  <p className="mt-2">{c.description}</p>
                 </div>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => handleDelete(c.id)}
-                  className="delete-button"
-                >
-                  X
-                </button>
-                <button onClick={() => handleEdit(c)} className="edit-button">
-                  ✏
-                </button>
+                <div className="post-child">
+                  <div>
+                    <h4>{c.author}</h4>
+                    <button>{c.createdAt}</button>
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => handleDelete(c.id)}
+                      className="delete-button"
+                    >
+                      X
+                    </button>
+                    <button
+                      onClick={() => handleEdit(c)}
+                      className="edit-button"
+                    >
+                      ✏
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

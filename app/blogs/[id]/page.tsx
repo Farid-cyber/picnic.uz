@@ -35,12 +35,13 @@ const Blog = () => {
 
   return (
     <div className="blog-wrapper">
-      <FaArrowLeftLong size={35} onClick={() => router.back()} />
-      {/* <div className="bloggg ttt">
+      {/* <div className="blog-wrapper">
+        <FaArrowLeftLong size={35} onClick={() => router.back()} />
+        {/* <div className="bloggg ttt">
         <div className="left-side-blog">
           {/* <Image quality={100} height={100} width={100} src={fullImage} alt="" />
            */}
-      {/* <img src={blogs?.image} alt="" />
+        {/* <img src={blogs?.image} alt="" />
         </div>
         <div className="right-side-blog">
           <div className="first-right-side-blog">
@@ -59,27 +60,31 @@ const Blog = () => {
           </div>
         </div>
       </div> */}
-      <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4">
-        <img
-          className="w-full"
-          src={`${blogs?.image}`}
-          alt="Sunset in the mountains"
-        />
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{blogs?.title}</div>
-          <p className="text-gray-700 text-base">
-            {blogs?.description}
-          </p>
+        <div className="life rounded shadow-lg mx-auto">
+          <div className="left">
+            <img
+              className=""
+              src={`${blogs?.image}`}
+              alt="Sunset in the mountains"
+            />
+          </div>
+          <div>
+            <div className="px-6 py-4">
+              <div className="font-bold text-xl mb-2">{blogs?.title}</div>
+              <p className="text-gray-700 text-base">{blogs?.description}</p>
+            </div>
+            <div className="px-6 pt-4 pb-2">
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {blogs?.createdAt}
+              </span>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {blogs?.author}
+              </span>
+            </div>
+          </div>
         </div>
-        <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            {blogs?.createdAt}
-          </span>
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            {blogs?.author}
-          </span>
-        </div>
-      </div>
+      {/* </div> */} 
+      <div></div>
     </div>
   );
 };
