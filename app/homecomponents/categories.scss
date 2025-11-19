@@ -74,12 +74,15 @@
 
             @include media(800px) {
                 width: 140px;
+                font-size: 10px;
                 // padding: 0 10px;
             }
 
             @include media(500px) {
+                padding: 7px 13px;
                 width: 100px;
-                font-size: 12px;
+                // font-size: 12px;
+                font-size: 10px;
             }
         }
 
@@ -102,6 +105,7 @@
 
             @include media(800px) {
                 width: 140px;
+                font-size: 10px;
                 border-radius: 30px;
                 // padding: 0 10px;
             }
@@ -110,8 +114,9 @@
                 display: flex;
                 align-items: center;
                 width: 100px;
-                font-size: 12px;
+                font-size: 10px;
                 border-radius: 30px;
+                padding: 7px 13px;
             }
         }
 
