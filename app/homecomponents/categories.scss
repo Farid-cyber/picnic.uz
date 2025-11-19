@@ -71,6 +71,7 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            justify-content: center;
 
             @include media(800px) {
                 width: 140px;
@@ -101,6 +102,7 @@
             cursor: pointer;
             display: flex;
             align-items: center;
+            justify-content: center;
 
 
             @include media(800px) {
