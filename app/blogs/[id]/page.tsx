@@ -71,23 +71,27 @@ const Blog = () => {
          
         </div> */}
       {/* </div> */}
-      <FaArrowLeftLong className="mr-3" size={35} onClick={() => router.back()} />
-      <div className="left-child-blog-wrapper">
-        <img src={`${blogs?.image}`} alt="" />
+      <div className="inside-2">
+        <FaArrowLeftLong size={35} onClick={() => router.back()} />
       </div>
-      <div className="right-child-blog-wrapper">
-        <div className="life">
-          <div className="">
-            <div className="font-bold text-xl mb-2">{blogs?.title}</div>
-            <p className="text-gray-700 text-base">{blogs?.description}</p>
-          </div>
-          <div className=" px-6 pt-4">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              {blogs?.createdAt}
-            </span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              {blogs?.author}
-            </span>
+      <div className="inside-1">
+        <div className="left-child-blog-wrapper">
+          <img src={`${blogs?.image}`} alt="" />
+        </div>
+        <div className="right-child-blog-wrapper">
+          <div className="life">
+            <div className="">
+              <div className="font-bold text-xl mb-2">{blogs?.title}</div>
+              <p className="text-gray-700 text-base">{blogs?.description}</p>
+            </div>
+            <div className=" pt-4">
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {blogs?.createdAt}
+              </span>
+              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                {blogs?.author}
+              </span>
+            </div>
           </div>
         </div>
       </div>

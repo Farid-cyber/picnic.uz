@@ -55,7 +55,7 @@ const Product = ({ product, setPreorder }: initialProps) => {
           <img src={`${product.images![0]}`} width={200} height={200} alt="" />
         </div>
       </Link>
-      <h1>{product.title}</h1>
+      <h1 className="line-clamp-1">{product.title}</h1>
       <div className="flex star-wrapper gap-2 items-center">
         <div className="flex gap-1">
           {stars.map((c, i) => (
