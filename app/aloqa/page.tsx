@@ -156,9 +156,9 @@ export default function Aloqa() {
               placeholder="Your message..."
             ></textarea>
           </div>
-          <div onClick={handleSubmit} className="last-child cursor-pointer">
+          <button onClick={handleSubmit} className="last-child cursor-pointer">
             Send Message
-          </div>
+          </button>
         </div>
       </div>
     </div>

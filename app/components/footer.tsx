@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-wrapper-top">
-        <div className="footer-wrapper">
+        <div className="footer-wrapper cursor-pointer">
           <div className="left-side-footer-wrapper">
             <Image alt="" height={100} width={100} src={"/Frame 50.svg"} />
             <div className="second-child-left-side-footer-wrapper">
@@ -59,7 +59,7 @@ export default function Footer() {
           <Link
             href={`https://myaccount.google.com/payments-and-subscriptions`}
           >
-            <Image src={"/Frame 53.svg"} width={250} height={100} alt="" />
+            <Image className="cursor-pointer" src={"/Frame 53.svg"} width={250} height={100} alt="" />
           </Link>
         </div>
       </div>

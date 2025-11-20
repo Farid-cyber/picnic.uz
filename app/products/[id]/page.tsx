@@ -162,7 +162,7 @@ const Page = () => {
               ))}
             </div>
             <div className="right-left-side">
-              <img src={`${imageUrl}`} alt="" />
+              <img className="" src={`${imageUrl}`} alt="" />
             </div>
           </div>
           <div className="right-side">
@@ -186,7 +186,7 @@ const Page = () => {
               </h5>
             </div>
             <div className="fourth-child-right-side">
-              <div className="left-fourth-child-right-side">
+              <div className="left-fourth-child-right-side cursor-pointer">
                 <div onClick={handleminus}>
                   <FiMinus size={25} />
                 </div>
@@ -200,7 +200,7 @@ const Page = () => {
                   handleOrder(product.title),
                     toast.success("Siz mahsulotni muvaffaqiyatli qo'shdingiz");
                 }}
-                className="right-fourth-child-right-side"
+                className="right-fourth-child-right-side cursor-pointer"
               >
                 Add to cart
               </button>

@@ -54,6 +54,7 @@
 
             img {
                 width: 100%;
+                border-radius: 10px;
 
                 @include media(750px) {
                     width: 100%;

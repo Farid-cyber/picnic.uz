@@ -59,13 +59,13 @@ export default function Sidebar({ sidebar }: InitialProps) {
   // }, [selected]);
 
   return (
-    <div className={`${sidebar ? "sidebar h-full" : "sidebar2"}`}>
+    <div className={`cursor-pointer ${sidebar ? "sidebar h-full" : "sidebar2"}`}>
       <Link
         // onClick={() => setSelected("/")}
         href={"/"}
         className="text-decoration-none"
       >
-        <button className={`${path === "/" ? "button2" : ""}`}>
+        <button className={`cursor-pointer ${path === "/" ? "button2" : ""}`}>
           Bosh Sahifa
         </button>
       </Link>
@@ -74,7 +74,7 @@ export default function Sidebar({ sidebar }: InitialProps) {
         href={"/mahsulotlar"}
         className="text-decoration-none "
       >
-        <button className={`${path === "/mahsulotlar" ? "button2" : ""}`}>
+        <button className={`cursor-pointer ${path === "/mahsulotlar" ? "button2" : ""}`}>
           Mahsulotlar
         </button>
       </Link>
@@ -83,7 +83,7 @@ export default function Sidebar({ sidebar }: InitialProps) {
         href={"/aloqa"}
         className="text-decoration-none "
       >
-        <button className={`${path === "/aloqa" ? "button2" : ""}`}>
+        <button className={`cursor-pointer ${path === "/aloqa" ? "button2" : ""}`}>
           Aloqa
         </button>
       </Link>
@@ -92,7 +92,7 @@ export default function Sidebar({ sidebar }: InitialProps) {
         href={"/blog"}
         className="text-decoration-none "
       >
-        <button className={`${path === "/blog"  ? "button2" : ""}`}>Blog</button>
+        <button className={`cursor-pointer ${path === "/blog"  ? "button2" : ""}`}>Blog</button>
       </Link>
       {user ? (
         <>
@@ -102,7 +102,7 @@ export default function Sidebar({ sidebar }: InitialProps) {
             href={"/registration"}
             className="text-decoration-none "
           >
-            <button className="">Logout</button>
+            <button className="cursor-pointer">Logout</button>
           </Link>
         </>
       ) : (
@@ -112,7 +112,7 @@ export default function Sidebar({ sidebar }: InitialProps) {
             href={"/registration"}
             className="text-decoration-none "
           >
-            <button className={`${path === "/registration" ? "button2" : ""}`}>
+            <button className={`cursor-pointer ${path === "/registration" ? "button2" : ""}`}>
               Registration
             </button>
           </Link>

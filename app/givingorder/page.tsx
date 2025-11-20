@@ -163,7 +163,7 @@ const Page = () => {
 
   return (
     <div className="givingorder">
-      <div>
+      <div className="cursor-pointer">
         <Toaster position="top-right" reverseOrder={false} />
       </div>
       {orders?.length == 0 || orders === null ? (
@@ -185,16 +185,16 @@ const Page = () => {
                   <img width={100} src={`${c.images?.slice(0, 1)}`} alt="" />
                   <div className="rightchild-left-side-second-givingorder">
                     <div className="left-rightchild-left-side-second-givingorder">
-                      <h1>{c.title}</h1>
+                      <h1 className="line-clamp-1">{c.title}</h1>
                       <h2>${c.price}</h2>
                     </div>
-                    <div className="right-rightchild-left-side-second-givingorder">
+                    <div className="cursor-pointer right-rightchild-left-side-second-givingorder">
                       <img
                         onClick={() => handleDelete(c.title)}
                         src="/Frame.svg"
                         alt=""
                       />
-                      <div className="buttom-right-rightchild-left-side-second-givingorder">
+                      <div className="cursor-pointer buttom-right-rightchild-left-side-second-givingorder">
                         <FiMinus
                           onClick={() => handleQuantity("minus", c.title)}
                         />
@@ -235,13 +235,13 @@ const Page = () => {
                       : calculateAll() - calculateDiscount()}
                   </p>
                 </div>
-                <div
+                <button
                   onClick={() => setOpen(true)}
                   className="six-child-right-side-second-givingorder cursor-pointer"
                 >
                   Buyurtma berish{""}
                   <FaArrowRightLong size={20} className="mt-1 ml-3" />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -304,12 +304,12 @@ const Page = () => {
                 placeholder="Qo‘shimcha ma’lumot yoki talablaringizni yozing"
               ></textarea>
             </div>
-            <div
+            <button
               onClick={handleSubmit}
               className="submit-button cursor-pointer"
             >
               Yuborish
-            </div>
+            </button>
           </div>
         </Rodal>
         <Rodal
@@ -353,20 +353,20 @@ const Page = () => {
                   ></textarea>
                 </div>
                 <div className="flex gap-2">
-                  <div
+                  <button
                     onClick={() => {
                       setCommenting(false), setOpen(false);
                     }}
                     className="comment-button cursor-pointer"
                   >
                     Yo'q fikr qoldirmayman
-                  </div>
-                  <div
+                  </button>
+                  <button
                     onClick={handleSubmitMessage}
                     className="submit-button cursor-pointer"
                   >
                     Xabarni yuborish
-                  </div>
+                  </button>
                 </div>
               </>
             ) : (

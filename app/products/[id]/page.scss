@@ -103,6 +103,7 @@
         margin: 0 auto;
         margin-top: 30px;
         padding-bottom: 20px;
+        gap: 30px;
 
         @include media(1215px) {
             flex-direction: column;
@@ -127,6 +128,10 @@
             min-height: 530px;
             justify-content: space-between;
 
+            @include media(650px) {
+                flex-direction: column-reverse;
+            }
+
             @include media(450px) {
                 gap: 15px;
                 max-width: 370px;
@@ -144,8 +149,16 @@
                 // justify-content: space-between;
                 gap: 16px;
 
+                @include media(650px) {
+                    flex-direction: row;
+                    margin-top: 20px;
+                    width: 100%;
+                    max-width: 600px;
+                }
+
                 @include media(450px) {
-                    max-width: 70px;
+                    // max-width: 70px;
+                    max-width: 400px;
                     width: 100%
                 }
 
@@ -179,9 +192,14 @@
                 // background-color: rgba(231, 251, 240, 0.864);
                 border-radius: 15px;
 
+                @include media(450px) {
+                    width: 100%;
+                }
+
                 img {
                     width: 100%;
                     height: 100%;
+                    border-radius: 15px;
                 }
 
                 @include media(450px) {

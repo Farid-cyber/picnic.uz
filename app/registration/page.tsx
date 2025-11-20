@@ -67,7 +67,12 @@ const SignUp = () => {
           return;
         } else {
           toast.success("Siz muvaffaqiyatli kirdingiz");
-          router.push("/");
+
+          if (user.email === "farid@gmailc.com") {
+            router.push("/admin/products");
+          } else {
+            router.push("/");
+          }
         }
       })
       .catch((error) => {
@@ -96,7 +101,7 @@ const SignUp = () => {
       <div>
         <Toaster position="top-right" reverseOrder={false} />
       </div>
-      <button onClick={() => router.push("/")} className="life111 ">
+      <button onClick={() => router.push("/")} className="cursor-pointer life111 ">
         Return Home
       </button>
       {login !== true ? (
@@ -107,21 +112,21 @@ const SignUp = () => {
           <div className="card-body">
             <input
               type="text"
-              className="form-control mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="form-control mb-3 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="emailadress..."
               value={emailadress}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              className="form-control mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="form-control mb-3 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="password..."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <button
               onClick={() => setLogin(true)}
-              className="life111 mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
+              className="cursor-pointer life111 mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               Dont have an account? Sign Up
             </button>
@@ -129,7 +134,7 @@ const SignUp = () => {
           <div className="card-footer">
             <button
               onClick={handleEnter}
-              className="btn btn-primary w-100 w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              className="cursor-pointer btn btn-primary w-100 w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Save
             </button>
@@ -143,21 +148,21 @@ const SignUp = () => {
           <div className="card-body">
             <input
               type="text"
-              className="form-control mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="form-control mb-3 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="emailadress..."
               value={emailadress}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              className="form-control mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="form-control mb-3 bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="password..."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <button
               onClick={() => setLogin(false)}
-              className="life mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
+              className="life cursor-pointer mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
               Return to sign in
             </button>
@@ -165,7 +170,7 @@ const SignUp = () => {
           <div className="card-footer">
             <button
               onClick={handleSave}
-              className="btn btn-primary w-100 w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              className="btn cursor-pointer btn-primary w-100 w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Save
             </button>

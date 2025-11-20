@@ -112,8 +112,8 @@ const Posts = () => {
               {/* </Link> */}
               <div className="father">
                 <div className="post-child1">
-                  <h2>{c.title}</h2>
-                  <p className="mt-2">{c.description}</p>
+                  <h2 className="line-clamp-1">{c.title}</h2>
+                  <p className="mt-2 line-clamp-3">{c.description}</p>
                 </div>
                 <div className="post-child">
                   <div>

@@ -188,7 +188,7 @@ const Categories = () => {
                 alt=""
               />
             </div>
-            <h1>{c.title}</h1>
+            <h1 className="line-clamp-1">{c.title}</h1>
             <div className="flex star-wrapper gap-2 items-center">
               <div className="flex gap-1"></div>
               <p>{c.rating}/5</p>

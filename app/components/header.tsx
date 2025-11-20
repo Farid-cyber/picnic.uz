@@ -102,7 +102,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
         </div>
         {admin ? (
           <Link href={"/admin/products"}>
-            <button className="btn button-admin">admin</button>
+            <button className="btn button-admin cursor-pointer">admin</button>
           </Link>
         ) : (
           <>
@@ -111,7 +111,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
             </Link>
           </>
         )}
-        <MdOutlineMenu onClick={() => setSide(true)} className="menu" />
+        <MdOutlineMenu onClick={() => setSide(true)} className="menu cursor-pointer" />
       </div>
     </div>
   );

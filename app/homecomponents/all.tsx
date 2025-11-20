@@ -77,9 +77,9 @@ const All = () => {
         ))}
       </div>
       {open ? (
-        <button className="button-quan cursor-pointer" onClick={() => showAllpros("less")}>show less</button>
+        <button className="button-quan cursor-pointer" onClick={() => showAllpros("less")}>Tanlangan mahsulotlar</button>
       ) : (
-        <button className="button-quan cursor-pointer" onClick={() => showAllpros("all")}>show all</button>
+        <button className="button-quan cursor-pointer" onClick={() => showAllpros("all")}>Hammasi</button>
       )}
     </div>
   );
