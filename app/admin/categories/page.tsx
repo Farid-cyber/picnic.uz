@@ -85,7 +85,7 @@ const Categories = () => {
             <p>{c.name}</p>
             <div className="w-full flex justify-end! gap-2 mt-2 ">
               <div
-                onClick={() => handleDelete(c.id!)}
+                // onClick={() => handleDelete(c.id!)}
                 className="border-1 rounded p-3 bg-yellow-600 cursor-pointer"
               >
                   ✏
