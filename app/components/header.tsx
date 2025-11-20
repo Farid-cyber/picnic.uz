@@ -12,6 +12,7 @@ import { setProtitle, getProductByTitle } from "../redux/slices/products";
 import { usePathname, useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.auth/firbase.cons.auth";
+import { PreOrder } from "../types";
 
 type InitialProps = {
   sidebar: boolean;
@@ -25,6 +26,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
   const { protitle } = useAppSelector((state) => state.products);
   const path = usePathname();
   const [admin, setAdmin] = useState(false);
+  const [orders, setOrders] = useState<PreOrder[]>([]);
 
   // useEffect(() => {
   //   if (window.location.pathname === "/") {
@@ -60,9 +62,20 @@ export default function Header({ setSide, sidebar }: InitialProps) {
     });
   };
 
+  const fetch = () => {
+    const change = JSON.parse(localStorage.getItem("orders")!);
+    setOrders(change);
+  };
+
+  useEffect(() => {
+    fetch();
+  }, []);
+
   useEffect(() => {
     check();
   }, [admin]);
+
+  // console.log(orders);
 
   return (
     <div className="header">
@@ -107,11 +120,19 @@ export default function Header({ setSide, sidebar }: InitialProps) {
         ) : (
           <>
             <Link href={"/givingorder"}>
-              <FiShoppingCart className="cart" />
+              <div className="cursor-pointer wrapper-cart">
+                <FiShoppingCart className="cart" />
+                <button className="btn">
+                  <p>{orders.length}</p>
+                </button>
+              </div>
             </Link>
           </>
         )}
-        <MdOutlineMenu onClick={() => setSide(true)} className="menu cursor-pointer" />
+        <MdOutlineMenu
+          onClick={() => setSide(true)}
+          className="menu cursor-pointer"
+        />
       </div>
     </div>
   );

@@ -99,11 +99,40 @@
             font-size: 10px;
         }
 
-        .cart {
-            width: 24px;
-            height: 24px;
-            color: rgba(0, 0, 0, 1);
+        .wrapper-cart {
+            width: 25px;
+            height: 25px;
+            position: relative;
+            // border: 1px solid;
+            z-index: 0;
+
+            .cart {
+                width: 24px;
+                height: 24px;
+                color: rgba(0, 0, 0, 1);
+                z-index: 1;
+            }
+
+            .btn {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                border: none;
+                background-color: rgb(5, 188, 5);
+                z-index: 2;
+                position: absolute;
+                margin: 0 auto;
+                top: -2px;
+                right: -6px;
+                color: white;
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
+
+
 
         .menu {
             display: none;

@@ -67,8 +67,7 @@ const SignUp = () => {
           return;
         } else {
           toast.success("Siz muvaffaqiyatli kirdingiz");
-
-          if (user.email === "farid@gmailc.com") {
+          if (user.email === "farid@gmail.com") {
             router.push("/admin/products");
           } else {
             router.push("/");
