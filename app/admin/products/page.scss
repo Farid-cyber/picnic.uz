@@ -11,20 +11,29 @@
 
 }
 
-.h{
+.h {
     min-height: 400px;
     // padding-bottom: 20px
 }
 
+
+.lll {
+    min-height: 500px;
+    height: 100%;
+}
+
 .life {
     min-height: 408px;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // width: 100%;
+    width: 100%;
+    gap: 10px;
     // height: 100vh;
     // border: 1px solid black;
-    // padding: 20px 50px 20px 50px;
+    padding: 20px 50px 20px 50px;
+    // margin-bottom: 100px;
 
     .product {
         width: 300px;

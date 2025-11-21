@@ -104,7 +104,7 @@ export default function ClientLayout({
           </div>
         </div>
         <Header sidebar={sidebar} setSide={setSide} />
-        <div className="flex w-full relative">
+        <div className="flex w-full relative mb-[60px]">
           <div className="">
             <Sidebar sidebar={sidebar} />
           </div>

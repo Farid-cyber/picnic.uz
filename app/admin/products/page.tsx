@@ -171,13 +171,13 @@ const Categories = () => {
   console.log(products);
 
   return (
-    <div className="w-full p-5">
+    <div className="w-full lll">
       <div className="w-full flex justify-end">
         <button onClick={() => setOpen(true)} className="buttoncha">
           + Products
         </button>
       </div>
-      <div className="life w-full flex flex-wrap gap-[30px]! mt-[20px]! mb-[70px]">
+      <div className="life">
         {products.map((c) => (
           <div key={c.id} className="product">
             <div className="image-product">

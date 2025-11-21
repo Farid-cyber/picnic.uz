@@ -116,7 +116,7 @@ const Products = () => {
         className="rodal"
         visible={open}
         onClose={() => setOpen(false)}
-        customStyles={{ width: "340px", height: "max-content" }}
+        customStyles={{ height: "max-content", width: "350px" }}
       >
         <div className="mt-4">
           <p>Buyurtma haqida to'liq malumot</p>
@@ -141,7 +141,7 @@ const Products = () => {
                     scope="row"
                     className="px-2 py-4 font-medium text-heading whitespace-nowrap"
                   >
-                    {c.title}
+                    {c.title.slice(0, 20)}...
                   </th>
                   <td className="px-2 py-4">{c.quantity}X</td>
                   <td className="px-2 py-4">${c.price}</td>

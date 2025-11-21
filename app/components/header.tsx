@@ -63,7 +63,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
   };
 
   const fetch = () => {
-    const change = JSON.parse(localStorage.getItem("orders")!);
+    const change = JSON.parse(localStorage.getItem("orders") || "[]");
     setOrders(change);
   };
 
@@ -123,7 +123,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
               <div className="cursor-pointer wrapper-cart">
                 <FiShoppingCart className="cart" />
                 <button className="btn">
-                  <p>{orders.length}</p>
+                  <p>{orders!.length}</p>
                 </button>
               </div>
             </Link>
