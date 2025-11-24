@@ -78,6 +78,7 @@
             @include media(500px) {
                 width: 100px;
                 font-size: 12px;
+                height: 32px;
                 padding: 0;
                 display: flex;
                 align-items: center;
@@ -111,6 +112,7 @@
                 font-size: 12px;
                 border-radius: 30px;
                 padding: 0;
+                height: 32px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
