@@ -171,8 +171,8 @@ const Categories = () => {
   console.log(products);
 
   return (
-    <div className="w-full lll">
-      <div className="w-full flex justify-end">
+    <div className="w-full! productssss-wrapper">
+      <div className="w-full lll flex justify-end">
         <button onClick={() => setOpen(true)} className="buttoncha">
           + Products
         </button>

@@ -10,7 +10,7 @@ export default function Home() {
   // console.log(testimonials);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-[40px]">
       <hr className="hr" />
       <FirstChild />
       <All />
