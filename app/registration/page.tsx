@@ -161,9 +161,9 @@ const SignUp = () => {
             />
             <button
               onClick={() => setLogin(false)}
-              className="life cursor-pointer mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
+              className="cursor-pointer life111 mt-2 font-medium text-primary-600 hover:underline dark:text-primary-500"
             >
-              Return to sign in
+              Return to sign-in
             </button>
           </div>
           <div className="card-footer">
