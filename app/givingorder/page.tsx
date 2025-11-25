@@ -91,7 +91,7 @@ const Page = () => {
     let f = 0;
     let l = (calculateAll() * 80) / 100;
     f = calculateAll() - l;
-    return f;
+    return Number(f.toString().slice(0, 2));
   };
 
   const handleSubmit = async () => {
