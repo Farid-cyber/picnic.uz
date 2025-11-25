@@ -8,7 +8,11 @@ import { MdOutlineMenu } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { setProtitle, getProductByTitle } from "../redux/slices/products";
+import {
+  setProtitle,
+  getProductByTitle,
+  fetchOrders,
+} from "../redux/slices/products";
 import { usePathname, useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.auth/firbase.cons.auth";
@@ -23,24 +27,10 @@ export default function Header({ setSide, sidebar }: InitialProps) {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [selected, setSelected] = useState("/");
-  const { protitle,preorders } = useAppSelector((state) => state.products);
+  const { protitle, preorders } = useAppSelector((state) => state.products);
   const path = usePathname();
   const [admin, setAdmin] = useState(false);
   const [orders, setOrders] = useState<PreOrder[]>([]);
-
-  // useEffect(() => {
-  //   if (window.location.pathname === "/") {
-  //     setSelected("/");
-  //   } else if (window.location.pathname === "/mahsulotlar") {
-  //     setSelected("/mahsulotlar");
-  //   } else if (window.location.pathname === "/aloqa") {
-  //     setSelected("/aloqa");
-  //   } else if (window.location.pathname === "/blog") {
-  //     setSelected("/blog");
-  //   } else if (window.location.pathname.startsWith("/admin")) {
-  //     setSelected("/admin");
-  //   }
-  // }, [selected]);
 
   useEffect(() => {
     dispatch(getProductByTitle(protitle));
@@ -73,9 +63,10 @@ export default function Header({ setSide, sidebar }: InitialProps) {
 
   useEffect(() => {
     check();
+    dispatch(fetchOrders());
   }, [admin]);
 
-  // console.log(orders);
+  console.log(preorders);
 
   return (
     <div className="header">
@@ -123,7 +114,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
               <div className="cursor-pointer wrapper-cart">
                 <FiShoppingCart className="cart" />
                 <button className="btn">
-                  <p>{preorders.length}</p>
+                  <p>{preorders!.length}</p>
                 </button>
               </div>
             </Link>

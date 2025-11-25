@@ -82,6 +82,9 @@ const useReducer = createSlice({
       .addCase(orderProduct.fulfilled, (state, action) => {
         state.preorders.push(action.payload);
       })
+      .addCase(fetchOrders.fulfilled, (state, action) => {
+        state.preorders = action.payload;
+      })
       .addCase(fetchProductsAll.fulfilled, (state, action) => {
         state.products = action.payload;
       });
@@ -211,7 +214,7 @@ export const getProductByTitle = createAsyncThunk(
 export const fetchOrders = createAsyncThunk(
   "products/fetchOrders",
   async () => {
-    const preorders = localStorage.getItem("orders");
+    const preorders = JSON.parse(localStorage.getItem("orders")!);
     return preorders;
   }
 );
