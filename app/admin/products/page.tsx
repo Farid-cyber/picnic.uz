@@ -172,7 +172,7 @@ const Categories = () => {
 
   return (
     <div className="w-full! productssss-wrapper">
-      <div className="w-full lll flex justify-end">
+      <div className="w-full lll flex justify-end pr-3">
         <button onClick={() => setOpen(true)} className="buttoncha">
           + Products
         </button>
@@ -377,7 +377,7 @@ const Categories = () => {
               />
             </div>
             <div className="mt-2 rodal-inside">
-              <label htmlFor="description">Title</label>
+              <label htmlFor="description">Description</label>
               <input
                 className="form-control mt-2"
                 type="text"
