@@ -5,6 +5,7 @@ import Product from "@/app/homecomponents/products";
 import { useAppDispatch, useAppSelector } from "@/app/redux/hook";
 import { fetchCategories } from "@/app/redux/slices/categories";
 import {
+  fetchOrders,
   fetchProducts,
   getProductByCategoryId,
   setCategoryId,
@@ -83,6 +84,7 @@ const Page = () => {
       }
     }
     localStorage.setItem("orders", JSON.stringify(orders));
+    dispatch(fetchOrders());
   };
 
   if (!product) {

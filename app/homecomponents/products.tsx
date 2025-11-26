@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+import { useAppDispatch } from "../redux/hook";
+import { fetchOrders } from "../redux/slices/products";
 // import { log } from "console";
 type Product = {
   id?: string;
@@ -25,6 +27,7 @@ interface initialProps {
 }
 
 const Product = ({ product, setPreorder }: initialProps) => {
+  const dispatch = useAppDispatch();
   // console.log(product);
   const [stars, setStars] = useState<string[]>([]);
   const life = product.rating as unknown as number;
@@ -44,7 +47,6 @@ const Product = ({ product, setPreorder }: initialProps) => {
     return 100 - Number(life.toString().slice(0, 2));
   };
 
-  
   return (
     <div className="product">
       <div>
@@ -77,7 +79,10 @@ const Product = ({ product, setPreorder }: initialProps) => {
           )}
         </div>
         <Image
-          onClick={() => {setPreorder(product), toast.success("Siz mashsulotni muvaffaqiyatli qo'shdingiz")}}
+          onClick={() => {
+            setPreorder(product), dispatch(fetchOrders());
+            toast.success("Siz mashsulotni muvaffaqiyatli qo'shdingiz");
+          }}
           alt=""
           src={"/shopping-cart-add-02.svg"}
           width={25}

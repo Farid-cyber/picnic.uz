@@ -14,7 +14,12 @@ import { db } from "../firebase/firebase.con";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { fetchOrders } from "../redux/slices/products";
+import {
+  deleteAllOrders,
+  deleteOrderProduct,
+  fetchOrders,
+} from "../redux/slices/products";
+import { fetchCategories } from "../redux/slices/categories";
 
 const Page = () => {
   const [orders, setOrders] = useState<PreOrder[]>([]);
@@ -64,9 +69,9 @@ const Page = () => {
   };
 
   const handleDelete = (title: string) => {
-    const orderss = orders.filter((c) => c.title !== title);
-    toast.success("Siz mahsulotni muvaffaqiyatli o'chirdingiz");
-    localStorage.setItem("orders", JSON.stringify(orderss));
+    // console.log(id);
+    dispatch(deleteOrderProduct(title));
+    dispatch(fetchOrders());
     fetch();
   };
 
@@ -132,6 +137,7 @@ const Page = () => {
       toast.success("Buyurtmangiz muvaffaqiyatli yuborildi ✔");
       // preorders = [];
       dispatch(fetchOrders());
+      dispatch(deleteAllOrders());
       setOpen(false);
       setCommenting(true);
       localStorage.removeItem("orders");
@@ -199,7 +205,7 @@ const Page = () => {
                     </div>
                     <div className="cursor-pointer right-rightchild-left-side-second-givingorder">
                       <img
-                        onClick={() => handleDelete(c.title)}
+                        onClick={() => handleDelete(c.title!)}
                         src="/Frame.svg"
                         alt=""
                       />

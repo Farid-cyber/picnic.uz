@@ -87,6 +87,12 @@ const useReducer = createSlice({
       })
       .addCase(fetchProductsAll.fulfilled, (state, action) => {
         state.products = action.payload;
+      })
+      .addCase(deleteOrderProduct.fulfilled, (state, action) => {
+        state.preorders = action.payload;
+      })
+      .addCase(deleteAllOrders.fulfilled, (state, action) => {
+        state.preorders = action.payload;
       });
   },
 });
@@ -214,7 +220,7 @@ export const getProductByTitle = createAsyncThunk(
 export const fetchOrders = createAsyncThunk(
   "products/fetchOrders",
   async () => {
-    const preorders = JSON.parse(localStorage.getItem("orders") || "[]");
+    const preorders = JSON.parse(localStorage.getItem("orders")!) || [];
     return preorders;
   }
 );
@@ -244,6 +250,25 @@ export const orderProduct = createAsyncThunk(
       console.error("Error fetching products by title:", e);
       throw e;
     }
+  }
+);
+
+
+export const deleteOrderProduct = createAsyncThunk(
+  "products/deleteOrderProduct",
+  async (title: string) => {
+    const change = JSON.parse(localStorage.getItem("orders")!);
+    const ch = change.filter((c: PreOrder) => c.title !== title);
+    localStorage.setItem("orders", JSON.stringify(ch));
+    return ch;
+  }
+);
+
+export const deleteAllOrders = createAsyncThunk(
+  "products/deleteAllOrders",
+  async () => {
+    localStorage.removeItem("orders");
+    return [];
   }
 );
 
