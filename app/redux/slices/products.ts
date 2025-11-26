@@ -214,7 +214,7 @@ export const getProductByTitle = createAsyncThunk(
 export const fetchOrders = createAsyncThunk(
   "products/fetchOrders",
   async () => {
-    const preorders = JSON.parse(localStorage.getItem("orders")!);
+    const preorders = JSON.parse(localStorage.getItem("orders") || "[]");
     return preorders;
   }
 );

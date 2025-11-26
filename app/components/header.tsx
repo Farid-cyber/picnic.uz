@@ -30,7 +30,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
   const { protitle, preorders } = useAppSelector((state) => state.products);
   const path = usePathname();
   const [admin, setAdmin] = useState(false);
-  const [orders, setOrders] = useState<PreOrder[]>([]);
+  // const [orders, setOrders] = useState<PreOrder[]>([]);
 
   useEffect(() => {
     dispatch(getProductByTitle(protitle));
@@ -52,14 +52,15 @@ export default function Header({ setSide, sidebar }: InitialProps) {
     });
   };
 
-  const fetch = () => {
-    const change = JSON.parse(localStorage.getItem("orders") || "[]");
-    setOrders(change);
-  };
+  // const fetch = () => {
+  //   const change = JSON.parse(localStorage.getItem("orders") || "[]");
+  //   setOrders(change);
+  // };
 
-  useEffect(() => {
-    fetch();
-  }, []);
+  // useEffect(() => {
+  //   fetch();
+  //   dis
+  // }, [orders]);
 
   useEffect(() => {
     check();
@@ -114,7 +115,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
               <div className="cursor-pointer wrapper-cart">
                 <FiShoppingCart className="cart" />
                 <button className="btn">
-                  <p>{preorders!.length}</p>
+                  <p>{preorders?.length}</p>
                 </button>
               </div>
             </Link>

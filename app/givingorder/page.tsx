@@ -13,6 +13,8 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/firebase.con";
 import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
+import { fetchOrders } from "../redux/slices/products";
 
 const Page = () => {
   const [orders, setOrders] = useState<PreOrder[]>([]);
@@ -26,6 +28,9 @@ const Page = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const { preorders } = useAppSelector((state) => state.products);
+
+  // const us
 
   const [commentator, setCommentator] = useState({
     commentatorname: "",
@@ -87,6 +92,8 @@ const Page = () => {
     check();
   }, [user]);
 
+  const dispatch = useAppDispatch();
+
   const calculateDiscount = () => {
     let f = 0;
     let l = (calculateAll() * 80) / 100;
@@ -123,6 +130,8 @@ const Page = () => {
         message: "",
       });
       toast.success("Buyurtmangiz muvaffaqiyatli yuborildi ✔");
+      // preorders = [];
+      dispatch(fetchOrders());
       setOpen(false);
       setCommenting(true);
       localStorage.removeItem("orders");
