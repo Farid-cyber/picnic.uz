@@ -17,6 +17,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase.auth/firbase.cons.auth";
 import { PreOrder } from "../types";
+import { FaStar } from "react-icons/fa";
 
 type InitialProps = {
   sidebar: boolean;
@@ -27,10 +28,10 @@ export default function Header({ setSide, sidebar }: InitialProps) {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [selected, setSelected] = useState("/");
-  const { protitle, preorders } = useAppSelector((state) => state.products);
+  const { protitle } = useAppSelector((state) => state.products);
   const path = usePathname();
   const [admin, setAdmin] = useState(false);
-  // const [orders, setOrders] = useState<PreOrder[]>([]);
+  const [orders, setOrders] = useState<PreOrder[]>([]);
 
   useEffect(() => {
     dispatch(getProductByTitle(protitle));
@@ -52,22 +53,21 @@ export default function Header({ setSide, sidebar }: InitialProps) {
     });
   };
 
-  // const fetch = () => {
-  //   const change = JSON.parse(localStorage.getItem("orders") || "[]");
-  //   setOrders(change);
-  // };
+  const fetch = () => {
+    const change = JSON.parse(localStorage.getItem("orders") || "[]");
+    setOrders(change);
+  };
 
-  // useEffect(() => {
-  //   fetch();
-  //   dis
-  // }, [orders]);
+  useEffect(() => {
+    fetch();
+  }, []);
 
   useEffect(() => {
     check();
     dispatch(fetchOrders());
   }, [admin]);
 
-  console.log(preorders);
+  // console.log(preorders);
 
   return (
     <div className="header">
@@ -114,9 +114,9 @@ export default function Header({ setSide, sidebar }: InitialProps) {
             <Link href={"/givingorder"}>
               <div className="cursor-pointer wrapper-cart">
                 <FiShoppingCart className="cart" />
-                <button className="btn">
-                  <p>{preorders?.length}</p>
-                </button>
+                <div className="btn">
+                  <FaStar className="mb-0.4" />
+                </div>
               </div>
             </Link>
           </>

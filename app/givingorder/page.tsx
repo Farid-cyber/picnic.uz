@@ -28,7 +28,7 @@ const Page = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const { preorders } = useAppSelector((state) => state.products);
+  // const { preorders } = useAppSelector((state) => state.products);
 
   // const us
 
