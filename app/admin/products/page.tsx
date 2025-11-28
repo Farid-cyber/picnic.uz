@@ -15,6 +15,7 @@ import { FaStar } from "react-icons/fa";
 import Rodal from "rodal";
 import "rodal/lib/rodal.css";
 import "./page.scss";
+import toast, { Toaster } from "react-hot-toast";
 type Product = {
   id?: string;
   title: string;
@@ -98,15 +99,24 @@ const Categories = () => {
   };
 
   const addImage = () => {
+    if (images!.length > 3) {
+      return;
+    }
     images!.push("");
     setImages([...images!]);
   };
 
-  const handleSave = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // const randomRating = (length: number = 5) => {};
-
+  const handleSave = async () => {
+    if (
+      productForm.title === "" ||
+      productForm.price === "" ||
+      productForm.category === "" ||
+      productForm.description === "" ||
+      productForm.discount === ""
+    ) {
+      toast.error("Formani to'liq to'ldiring");
+      return;
+    }
     const productObject = {
       title: productForm.title,
       description: productForm.description,
@@ -172,21 +182,19 @@ const Categories = () => {
 
   return (
     <div className="w-full! productssss-wrapper">
+      <div>
+        <Toaster position="top-right" reverseOrder={false} />
+      </div>
       <div className="w-full lll flex justify-end pr-3">
         <button onClick={() => setOpen(true)} className="buttoncha">
           + Products
         </button>
       </div>
       <div className="life">
-        {products.map((c) => (
+        {products.map((c:Product) => (
           <div key={c.id} className="product">
             <div className="image-product">
-              <img
-                src={`${c.images![0]}`}
-                width={200}
-                height={200}
-                alt=""
-              />
+              <Image src={`${c.images![0]}`} width={200} height={200} alt="" />
             </div>
             <h1 className="line-clamp-1">{c.title}</h1>
             <div className="flex star-wrapper gap-2 items-center">
@@ -339,111 +347,119 @@ const Categories = () => {
       >
         <div className="mt-4">
           <p>Mahsulot kiriting</p>
-          <form onSubmit={(e) => handleSave(e)}>
-            <div className="rodal-inside">
-              {images!.map((image, index) => (
-                <div className="flex items-center gap-2" key={index}>
-                  <input
-                    value={image}
-                    onChange={(e) => handleImage(e.target.value, index)}
-                    type="string"
-                    className="form-control mt-2"
-                    placeholder="image url..."
-                  />
-                  <div
-                    onClick={() => removeImage(index)}
-                    className="btn button-del"
-                  >
-                    X
-                  </div>
-                </div>
-              ))}
-              <div onClick={addImage} className="btn adding-image w-100 mt-2">
-                Add Image
+          {/* <form onSubmit={(e) => handleSave(e)}> */}
+          <div className="rodal-inside">
+            {images!.map((image, index) => (
+              <div className="flex items-center gap-2" key={index}>
+                <input
+                  value={image}
+                  onChange={(e) => handleImage(e.target.value, index)}
+                  type="string"
+                  className="form-control mt-2"
+                  placeholder="image url..."
+                />
+                <button
+                  onClick={() => removeImage(index)}
+                  className="btn button-del cursor-pointer"
+                >
+                  X
+                </button>
               </div>
-            </div>
-            <div className="mt-2 rodal-inside">
-              <label htmlFor="title">Title</label>
+            ))}
+            <button
+              onClick={addImage}
+              className="btn adding-image w-100 mt-2 cursor-pointer"
+            >
+              Add Image
+            </button>
+          </div>
+          <div className="mt-2 rodal-inside">
+            <label htmlFor="title">Title</label>
+            <input
+              className="form-control mt-2"
+              type="text"
+              name="title..."
+              id="title"
+              placeholder="title..."
+              value={productForm.title}
+              onChange={(e) =>
+                setProductForm({ ...productForm, title: e.target.value })
+              }
+            />
+          </div>
+          <div className="mt-2 rodal-inside">
+            <label htmlFor="description">Description</label>
+            <input
+              className="form-control mt-2"
+              type="text"
+              name="description..."
+              id="description"
+              placeholder="description..."
+              value={productForm.description}
+              onChange={(e) =>
+                setProductForm({
+                  ...productForm,
+                  description: e.target.value,
+                })
+              }
+            />
+          </div>
+          <div className="mt-2 flex gap-2">
+            <div className="flex flex-col gap-2 rodal-inside">
+              <label htmlFor="discount">Discount</label>
               <input
                 className="form-control mt-2"
-                type="text"
-                name="title..."
-                id="title"
-                placeholder="title..."
-                value={productForm.title}
+                type="number"
+                name="discount..."
+                id="discount"
+                placeholder="discount..."
+                value={productForm.discount}
                 onChange={(e) =>
-                  setProductForm({ ...productForm, title: e.target.value })
+                  setProductForm({ ...productForm, discount: e.target.value })
                 }
               />
             </div>
-            <div className="mt-2 rodal-inside">
-              <label htmlFor="description">Description</label>
+            <div className="flex flex-col gap-2 rodal-inside">
+              <label htmlFor="price">Current price</label>
               <input
                 className="form-control mt-2"
                 type="text"
-                name="description..."
-                id="description"
-                placeholder="description..."
-                value={productForm.description}
+                name="price..."
+                id="price"
+                placeholder="price..."
+                value={productForm.price}
                 onChange={(e) =>
-                  setProductForm({
-                    ...productForm,
-                    description: e.target.value,
-                  })
+                  setProductForm({ ...productForm, price: e.target.value })
                 }
               />
             </div>
-            <div className="mt-2 flex gap-2">
-              <div className="flex flex-col gap-2 rodal-inside">
-                <label htmlFor="discount">Discount</label>
-                <input
-                  className="form-control mt-2"
-                  type="number"
-                  name="discount..."
-                  id="discount"
-                  placeholder="discount..."
-                  value={productForm.discount}
-                  onChange={(e) =>
-                    setProductForm({ ...productForm, discount: e.target.value })
-                  }
-                />
-              </div>
-              <div className="flex flex-col gap-2 rodal-inside">
-                <label htmlFor="price">Current price</label>
-                <input
-                  className="form-control mt-2"
-                  type="text"
-                  name="price..."
-                  id="price"
-                  placeholder="price..."
-                  value={productForm.price}
-                  onChange={(e) =>
-                    setProductForm({ ...productForm, price: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-            <div className="mt-2 rodal-inside">
-              <label htmlFor="title">Category</label>
-              <select
-                onChange={(e) =>
-                  setProductForm({ ...productForm, category: e.target.value })
-                }
-                value={productForm.category}
-                className="form-select mt-2"
-              >
-                <option defaultValue={"0"} value="0" disabled>
-                  Select the category
+          </div>
+          <div className="mt-2 rodal-inside">
+            <label htmlFor="title">Category</label>
+            <select
+              onChange={(e) =>
+                setProductForm({ ...productForm, category: e.target.value })
+              }
+              value={productForm.category}
+              className="form-select mt-2"
+            >
+              <option defaultValue={"0"} value="0" disabled>
+                Select the category
+              </option>
+              {categories.map((c, i) => (
+                <option key={i} value={c.id}>
+                  {c.name}
                 </option>
-                {categories.map((c, i) => (
-                  <option key={i} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <button className="btn btn-primary w-100 mt-3">Save</button>
-          </form>
+              ))}
+            </select>
+          </div>
+          <button
+            onClick={handleSave}
+            className="btn adding-image w-full btn-primary w-100 mt-3"
+          >
+            Save
+          </button>
+          {/* </form> */}
         </div>
       </Rodal>
     </div>

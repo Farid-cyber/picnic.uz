@@ -18,7 +18,11 @@ export default function AdminLayout({
         <div className="">
           <Sidebar2 sidebar={sidebar} />
         </div>
-        <main className="w-full">{children}</main>
+        <div className="w-full">
+          <html lang="en">
+            <body>{children}</body>
+          </html>
+        </div>
       </div>
     </div>
   );
