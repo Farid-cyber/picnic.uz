@@ -1,5 +1,6 @@
 "use client";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "./layout.scss";
 
 import { useState } from "react";
 import HeaderAdmin from "./adminHeader";
@@ -18,11 +19,11 @@ export default function AdminLayout({
         <div className="">
           <Sidebar2 sidebar={sidebar} />
         </div>
-        <div className="w-full">
-          <html lang="en">
-            <body>{children}</body>
-          </html>
-        </div>
+        {/* <div className="w-full"> */}
+        {/* <html lang="en"> */}
+        <main className="w-full h-full">{children}</main>
+        {/* </html> */}
+        {/* </div> */}
       </div>
     </div>
   );

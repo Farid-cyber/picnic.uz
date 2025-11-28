@@ -12,9 +12,12 @@
 
 .productssss-wrapper {
     min-height: 500px;
+    padding-bottom: 50px;
     // height: 100%;
     // border: 1px solid;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
 
     .lll {
@@ -31,7 +34,7 @@
         }
     }
 
-    .life {
+    .products-admin-wrapper {
         min-height: 400px;
         // height: 100%;
         display: flex;
@@ -44,13 +47,13 @@
         padding: 20px 50px 40px 50px;
         // margin-bottom: -100px;
         // border: 1px solid;
-    
+
         .product {
             width: 300px;
             min-height: 408px;
-    
-    
-    
+
+
+
             .image-product {
                 width: 300px;
                 height: 300px;
@@ -60,7 +63,7 @@
                 justify-content: center;
                 align-items: center;
             }
-    
+
             h1 {
                 font-size: 20px;
                 font-weight: 700;
@@ -68,14 +71,14 @@
                 line-height: 100%;
                 margin-top: 17px;
             }
-    
+
             .star-wrapper {
                 margin-top: 10px;
-    
+
                 div {
                     color: rgba(255, 198, 51, 1);
                 }
-    
+
                 p {
                     font-size: 14px;
                     color: rgba(0, 0, 0, 1);
@@ -83,30 +86,30 @@
                     line-height: 100%;
                 }
             }
-    
+
             .bottom {
                 margin-top: 8px;
-    
+
                 div {
                     display: flex;
                     align-items: center;
                     // border: 1px solid;
                     height: 32px;
-    
+
                     p {
                         font-size: 24px;
                         font-weight: 700;
                         color: rgba(0, 0, 0, 1);
                         line-height: 100%;
                     }
-    
+
                     span {
                         font-size: 24px;
                         font-weight: 700;
                         color: rgba(0, 0, 0, 0.4);
                         line-height: 100%;
                     }
-    
+
                     .percent-button {
                         width: 58px;
                         height: 28px;
@@ -121,7 +124,7 @@
                         margin-bottom: 10px;
                     }
                 }
-    
+
             }
         }
     }

@@ -16,6 +16,7 @@ import Rodal from "rodal";
 import "rodal/lib/rodal.css";
 import "./page.scss";
 import toast, { Toaster } from "react-hot-toast";
+import AdminProduct from "./product";
 type Product = {
   id?: string;
   title: string;
@@ -190,37 +191,43 @@ const Categories = () => {
           + Products
         </button>
       </div>
-      <div className="life">
-        {products.map((c:Product) => (
-          <div key={c.id} className="product">
-            <div className="image-product">
-              <Image src={`${c.images![0]}`} width={200} height={200} alt="" />
-            </div>
-            <h1 className="line-clamp-1">{c.title}</h1>
-            <div className="flex star-wrapper gap-2 items-center">
-              <div className="flex gap-1"></div>
-              <p>{c.rating}/5</p>
-            </div>
-            <div className="bottom flex gap-4 items-center justify-between">
-              <div className="flex gap-2 items-center">
-                <p>${c.price}</p>
-                {c.discount !== "" ? (
-                  <>
-                    <span className="line-through">${c.discount}</span>
-                    {/* <button className="percent-button">-{calculate()}%</button> */}
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-              <button onClick={() => handleDelete(c.id!)} className="buttonsss">
-                Delete
-              </button>
-              <button onClick={() => handleEdit(c)} className="buttonsss2">
-                Edit
-              </button>
-            </div>
-          </div>
+      <div className="products-admin-wrapper">
+        {products.map((c: Product) => (
+          // <div key={c.id} className="product">
+          //   <div className="image-product">
+          //     <img
+          //       src={`${c.images![0]}`}
+          //       width={200}
+          //       height={200}
+          //       alt=""
+          //     />
+          //   </div>
+          //   <h1 className="line-clamp-1">{c.title}</h1>
+          //   <div className="flex star-wrapper gap-2 items-center">
+          //     <div className="flex gap-1"></div>
+          //     <p>{c.rating}/5</p>
+          //   </div>
+          //   <div className="bottom flex gap-4 items-center justify-between">
+          //     <div className="flex gap-2 items-center">
+          //       <p>${c.price}</p>
+          //       {c.discount !== "" ? (
+          //         <>
+          //           <span className="line-through">${c.discount}</span>
+          //           {/* <button className="percent-button">-{calculate()}%</button> */}
+          //         </>
+          //       ) : (
+          //         ""
+          //       )}
+          //     </div>
+          //     <button onClick={() => handleDelete(c.id!)} className="buttonsss">
+          //       Delete
+          //     </button>
+          //     <button onClick={() => handleEdit(c)} className="buttonsss2">
+          //       Edit
+          //     </button>
+          //   </div>
+          // </div>
+          <AdminProduct key={c.id} handleEdit={handleEdit} handleDelete={handleDelete} product={c}/>
         ))}
       </div>
       {/* <Rodal
