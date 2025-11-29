@@ -65,10 +65,10 @@ export default function ClientLayout({
         console.log(uid);
 
         if (user.email !== "farid@gmail.com") {
-          router.push("/registration");
+          router.push("/");
         }
       } else if (location.pathname.startsWith("/admin")) {
-        router.push("/registration");
+        router.push("/");
       }
     });
   };

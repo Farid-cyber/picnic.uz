@@ -50,7 +50,7 @@ const Categories = ({ category, setCategory }: InitialProps) => {
             key={c.id}
             className={`${categoryId === c.id ? "button2" : "button"}`}
           >
-            {c.name}
+            {c.name.slice(0, 1).toUpperCase()}{c.name.slice(1)}
           </button>
         ))}
       </div>
