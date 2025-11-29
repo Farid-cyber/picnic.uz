@@ -143,7 +143,6 @@ const Page = () => {
             </button>
           ))}
         </div>
-        {/* <Categories />      */}
         <div className="diivv">
           <img
             onClick={() => router.back()}
