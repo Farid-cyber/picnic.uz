@@ -26,8 +26,8 @@ const Blog = () => {
     fetchProduct();
   }, [id]);
 
-  console.log(id);
-  console.log(blogs);
+  // console.log(id);
+  // console.log(blogs);
 
   // const fullImage = blogs?.image?.startsWith("http")
   // ? blogs.image
