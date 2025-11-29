@@ -1,4 +1,5 @@
 "use client";
+import Categories from "@/app/homecomponents/categories";
 import "./page.scss";
 import { db } from "@/app/firebase/firebase.con";
 import Product from "@/app/homecomponents/products";
@@ -91,6 +92,8 @@ const Page = () => {
     <p>Xatolik</p>;
     return;
   }
+  // const [category, setCategoryId] = useState("all");
+
 
   const imagearray = product.images as unknown as string[];
   const calculate = () => {
@@ -123,7 +126,7 @@ const Page = () => {
         <div>
           <Toaster position="top-right" reverseOrder={false} />
         </div>
-        <div className="buttons overflow-x-auto">
+        {/* <div className="buttons overflow-x-auto">
           <button
             onClick={() => setCategoryId1("")}
             className={`${categoryId === "" ? "button2" : "button"}`}
@@ -139,8 +142,8 @@ const Page = () => {
               {c.name}
             </button>
           ))}
-        </div>
-        
+        </div> */}
+        <Categories />     
         <div className="diivv">
           <img
             onClick={() => router.back()}
