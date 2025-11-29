@@ -67,7 +67,7 @@ export default function Header({ setSide, sidebar }: InitialProps) {
     dispatch(fetchOrders());
   }, [admin]);
 
-  console.log(preorders);
+  // console.log(preorders);
 
   return (
     <div className="header">

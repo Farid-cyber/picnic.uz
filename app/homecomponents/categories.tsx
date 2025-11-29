@@ -32,7 +32,7 @@ const Categories = ({ category, setCategory }: InitialProps) => {
     }
   };
 
-  console.log(categoryId);
+  // console.log(categoryId);
 
   return (
     <div className="categories">

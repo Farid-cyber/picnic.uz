@@ -238,12 +238,12 @@ export const orderProduct = createAsyncThunk(
       if (!filtered) throw new Error("Product not found");
       const storedOrders = localStorage.getItem("orders");
       const orders = storedOrders ? JSON.parse(storedOrders) : [];
-      const existingIndex = orders.findIndex((o: any) => o.id === id);
-      if (existingIndex !== -1) {
-        orders[existingIndex].quantity += 1;
-      } else {
-        orders.push({ ...filtered, quantity: 1 });
-      }
+      // const existingIndex = orders.findIndex((o: any) => o.id === id);
+      // if (existingIndex !== -1) {
+      // orders[existingIndex].quantity += 1;
+      // } else {
+      orders.push({ ...filtered, quantity: 1 });
+      // }
       localStorage.setItem("orders", JSON.stringify(orders));
       return orders;
     } catch (e) {
@@ -252,7 +252,6 @@ export const orderProduct = createAsyncThunk(
     }
   }
 );
-
 
 export const deleteOrderProduct = createAsyncThunk(
   "products/deleteOrderProduct",

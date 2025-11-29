@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
-import { useAppDispatch } from "../redux/hook";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
 import { fetchOrders } from "../redux/slices/products";
 // import { log } from "console";
 type Product = {
@@ -31,12 +31,33 @@ const Product = ({ product, setPreorder }: initialProps) => {
   // console.log(product);
   const [stars, setStars] = useState<string[]>([]);
   const life = product.rating as unknown as number;
+  const { preorders } = useAppSelector((state) => state.products);
   // console.log(life);
   const Life = () => {
     const starCount = Math.floor(life);
     const newStars = Array(starCount).fill("");
     setStars(newStars);
   };
+
+  const handleOr = (product: Product) => {
+    const storedOrders = localStorage.getItem("orders");
+    const orders = storedOrders ? JSON.parse(storedOrders) : [];
+    const something = orders.find((c: Product) => c.id === product.id);
+    // console.log(something);
+    if (something === undefined) {
+      setPreorder(product);
+      dispatch(fetchOrders());
+    } else {
+      const existingIndex = orders.findIndex((o: any) => o.id === product.id);
+      if (existingIndex !== -1) {
+        orders[existingIndex].quantity += 1;
+      }
+      localStorage.setItem("orders", JSON.stringify(orders));
+    }
+    // if(something)
+  };
+
+  // useAppSelector(pr);
 
   useEffect(() => {
     Life();
@@ -80,7 +101,7 @@ const Product = ({ product, setPreorder }: initialProps) => {
         </div>
         <Image
           onClick={() => {
-            setPreorder(product), dispatch(fetchOrders());
+            handleOr(product);
             toast.success("Siz mashsulotni muvaffaqiyatli qo'shdingiz");
           }}
           alt=""
