@@ -72,9 +72,12 @@ const ThirdChild = () => {
           className={`carousel-track ${paused ? "paused" : ""}`}
         >
           {[...testimonials, ...testimonials].map((t, i) => (
-            <div key={i} className="carousel-item w-[300px]">
+            <div key={i} className="carousel-item">
               <div className="flex gap-1 mb-3 text-yellow-400">★★★★★</div>
-              <h3 className="font-semibold text-lg mb-2">{t.name}</h3>
+              <div className="flex mb-2 items-center gap-[5px]">
+                <h3 className="font-semibold text-lg ">{t.name}</h3>
+                <img src="/Frame (1).svg" width={20} alt="" />
+              </div>
               <p className="text-gray-600 text-sm">{t.text}</p>
             </div>
           ))}
