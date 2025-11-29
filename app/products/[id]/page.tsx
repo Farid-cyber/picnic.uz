@@ -126,7 +126,7 @@ const Page = () => {
         <div>
           <Toaster position="top-right" reverseOrder={false} />
         </div>
-        {/* <div className="buttons overflow-x-auto">
+        <div className="buttons overflow-x-auto gap-2">
           <button
             onClick={() => setCategoryId1("")}
             className={`${categoryId === "" ? "button2" : "button"}`}
@@ -142,8 +142,8 @@ const Page = () => {
               {c.name}
             </button>
           ))}
-        </div> */}
-        <Categories />     
+        </div>
+        {/* <Categories />      */}
         <div className="diivv">
           <img
             onClick={() => router.back()}
