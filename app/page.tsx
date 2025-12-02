@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col pb-[40px]">
-      <hr className="hr" />
+      {/* <hr className="hr" /> */}
       <FirstChild />
       <All />
       <SecondChild />

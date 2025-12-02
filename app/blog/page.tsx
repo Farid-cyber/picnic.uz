@@ -30,7 +30,7 @@ export default function Blog() {
 
   return (
     <div className="blog h-100vh">
-      <hr className="hr" />
+      {/* <hr className="hr" /> */}
       <div className="top-blog">
         <h1>Sayohat va Lager Blogi</h1>
         <p>

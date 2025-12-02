@@ -20,7 +20,7 @@ export default function Mahsulotlar() {
   };
   return (
     <div>
-      <hr className="hr" />
+      {/* <hr className="hr" /> */}
       <All />
     </div>
   );
